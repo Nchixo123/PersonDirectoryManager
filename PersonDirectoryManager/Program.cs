@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using PersonDirectoryManager.Configuration;
+using Serilog;
 
 namespace PersonDirectoryManager
 {
@@ -8,10 +10,14 @@ namespace PersonDirectoryManager
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.ConfigureDependency();
+
+            Log.Logger = new Serilog.LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
                 .AddNegotiate();

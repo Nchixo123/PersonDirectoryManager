@@ -14,7 +14,7 @@ public class Person
     [Required, MinLength(2, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(50)")]
     public string LastName { get; set; } = null!;
 
-    [Required, Column(TypeName = "byte")]
+    [Required]
     public Gender Gender { get; set; }
 
     [Required, Column(TypeName = "nvarchar(75)")]
@@ -35,14 +35,15 @@ public class Person
     [Required, Column(TypeName = "Varbinary(max)")]
     public byte[] Picture { get; set; } = null!;
 
-    [Column(TypeName = "byte")]
+    [Column(TypeName = "int")]
     public bool IsDelete { get; set; }
 
     public int CityId { get; set; }
 
     public City City { get; set; } = null!;
 
-    public ICollection<PersonRelations>? Relationships { get; set; }
+    public ICollection<PersonRelations>? FromRelationships { get; set; }
+    public ICollection<PersonRelations>? ToRelationships { get; set; }
 }
 public enum Gender : byte
 {

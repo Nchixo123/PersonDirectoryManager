@@ -14,7 +14,7 @@ public class City
     [Column(TypeName = "date")]
     public DateTime CreateDate { get; set; }
 
-    [Column(TypeName = "byte")]
+    [Column(TypeName = "int")]
     public bool IsDelete { get; set; }
 
     public ICollection<Person>? People { get; set; }

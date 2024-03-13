@@ -1,4 +1,5 @@
 ﻿using Db.Repository;
+using Microsoft.EntityFrameworkCore;
 using Services;
 using Services.RepositoryInterfaces;
 using Services.ServiceInterfaces;
@@ -17,6 +18,7 @@ namespace PersonDirectoryManager.Configuration
             builder.Services.AddScoped<ICityService, CityService>();
             builder.Services.AddScoped<IPersonRelationService, PersonRelationsService>();
             builder.Services.AddScoped<IPersonService,  PersonService>();
+            builder.Services.AddDbContext<PersonDbContext>(options => options.UseSqlServer(connectionString));
         }
     }
 }

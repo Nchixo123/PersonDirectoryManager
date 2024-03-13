@@ -20,14 +20,19 @@ public class PersonDbContext : DbContext
            .HasForeignKey(p => p.CityId);
 
         modelBuilder.Entity<PersonRelations>()
-            .HasOne(r => r.FromPerson)
-            .WithMany(p => p.Relationships)
-            .HasForeignKey(r => r.FromId);
+              .HasKey(pr => new { pr.FromId, pr.ToId });
 
         modelBuilder.Entity<PersonRelations>()
-            .HasOne(r => r.ToPerson)
-            .WithMany(p => p.Relationships)
-            .HasForeignKey(r => r.ToId);
+            .HasOne(pr => pr.FromPerson)
+            .WithMany(p => p.FromRelationships)
+            .HasForeignKey(pr => pr.FromId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<PersonRelations>()
+            .HasOne(pr => pr.ToPerson)
+            .WithMany(p => p.ToRelationships)
+            .HasForeignKey(pr => pr.ToId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 
     public DbSet<City> Cities { get; set; }
