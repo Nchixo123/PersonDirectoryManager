@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace DTOs;
 
 public class Person
@@ -14,19 +15,25 @@ public class Person
     [Required, MinLength(2, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(50)")]
     public string LastName { get; set; } = null!;
 
+    [Required, MinLength(11, ErrorMessage = "Invalid input"), MaxLength(11, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(11)")]
+    public string PIN { get; set; } = null!;
+
+    [Required, Column(TypeName = "Date")]
+    public DateTime BirthDate { get; set; }
+
     [Required]
     public Gender Gender { get; set; }
 
     [Required, Column(TypeName = "nvarchar(75)")]
     public string Address { get; set; } = null!;
 
-    [Required, MinLength(2, ErrorMessage = "Invalid input"), MaxLength(18, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(18)")]
+    [Required, MinLength(4, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(18)")]
     public string PersonalNumber { get; set; } = null!;
 
-    [MinLength(2, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(50)")]
+    [MinLength(4, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(50)")]
     public string? OfficeNumber { get; set; }
 
-    [MinLength(2, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(50)")]
+    [MinLength(4, ErrorMessage = "Invalid input"), MaxLength(50, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(50)")]
     public string? HomeNumber { get; set; }
 
     [Column(TypeName = "Date")]

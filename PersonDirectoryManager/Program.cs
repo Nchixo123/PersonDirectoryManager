@@ -15,9 +15,12 @@ namespace PersonDirectoryManager
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
             builder.ConfigureDependency();
 
-            Log.Logger = new Serilog.LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+            Log.Logger = new Serilog.LoggerConfiguration()
+                                    .ReadFrom.Configuration(builder.Configuration)
+                                    .CreateLogger();
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
                 .AddNegotiate();
