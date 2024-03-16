@@ -23,9 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoMapper", "AutoMapper", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mapper", "Mapper\Mapper.csproj", "{BC1CF78B-FD8A-45B9-AACA-5A7DFFD7224A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{3DAE54D3-B181-4CAF-88AC-88C5B71DC3DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{3DAE54D3-B181-4CAF-88AC-88C5B71DC3DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validations", "Validations\Validations.csproj", "{FCC62060-9611-4F83-9E87-43D35F96DDDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validations", "Validations\Validations.csproj", "{FCC62060-9611-4F83-9E87-43D35F96DDDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalExceptionHandling", "GlobalExceptionHandling", "{8537BB31-D625-4EC1-BF74-0888B2071AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpectionHandler", "ExpectionHandler\ExpectionHandler.csproj", "{0E7A6CED-B698-4B6F-ABA2-570EF7835C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,10 @@ Global
 		{FCC62060-9611-4F83-9E87-43D35F96DDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCC62060-9611-4F83-9E87-43D35F96DDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCC62060-9611-4F83-9E87-43D35F96DDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7A6CED-B698-4B6F-ABA2-570EF7835C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7A6CED-B698-4B6F-ABA2-570EF7835C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7A6CED-B698-4B6F-ABA2-570EF7835C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7A6CED-B698-4B6F-ABA2-570EF7835C48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +81,7 @@ Global
 		{BC1CF78B-FD8A-45B9-AACA-5A7DFFD7224A} = {40117655-BC21-4974-AC47-7CB328140C58}
 		{3DAE54D3-B181-4CAF-88AC-88C5B71DC3DA} = {592835C6-F4F3-47E7-82B5-CCB8A46A2D52}
 		{FCC62060-9611-4F83-9E87-43D35F96DDDE} = {592835C6-F4F3-47E7-82B5-CCB8A46A2D52}
+		{0E7A6CED-B698-4B6F-ABA2-570EF7835C48} = {8537BB31-D625-4EC1-BF74-0888B2071AF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99567D1B-7F96-436B-BF7C-B21CB8516FDC}

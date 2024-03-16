@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Db.Repository\Db.Repository.csproj" />
+    <ProjectReference Include="..\ExpectionHandler\ExpectionHandler.csproj" />
+    <ProjectReference Include="..\Mapper\Mapper.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 

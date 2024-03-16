@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using PersonDirectoryManager.Configuration;
 using Serilog;
+using ExpectionHandler;
 
 namespace PersonDirectoryManager
 {
@@ -37,6 +38,8 @@ namespace PersonDirectoryManager
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<ExceptionHandle>();
 
             app.UseHttpsRedirection();
 
