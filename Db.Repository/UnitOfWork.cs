@@ -12,7 +12,7 @@ namespace Db.Repository
         public UnitOfWork(PersonDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
-            _cityRepository = new Lazy<ICityRepository>(() => new CityRepostiroy(context));
+            _cityRepository = new Lazy<ICityRepository>(() => new CityRepository(context));
             _personRepository = new Lazy<IPersonRepository>(() => new PersonRepository(context));
             _personRelationsRepository = new Lazy<IPersonRelationsRepository>(() => new PersonRelationsRepository(context));
         }
