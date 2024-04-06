@@ -20,7 +20,7 @@ public class Person
     [Required, MinLength(11, ErrorMessage = "Invalid input"), MaxLength(11, ErrorMessage = "Invalid input"), Column(TypeName = "nvarchar(11)")]
     public string PIN { get; set; } = null!;
 
-    [Required, Column(TypeName = "Date")]
+    [Required, Column(TypeName = "Date"), MinimumAge(18)]
     public DateTime BirthDate { get; set; }
 
     [Required]
