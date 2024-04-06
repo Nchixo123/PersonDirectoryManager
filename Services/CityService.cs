@@ -29,8 +29,8 @@ public sealed class CityService : ICityService
 
     public async Task<IQueryable<City>> GetCities()
     {
-        var cities = await _unitOfWork.CityRepository.SetAsync();
-        return cities;
+     
+        return await _unitOfWork.CityRepository.SetAsync();
     }
 
     public async Task<City> GetCity(int cityId)
