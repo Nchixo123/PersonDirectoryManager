@@ -20,8 +20,11 @@ namespace PersonDirectoryManager
             builder.ConfigureDependency();
 
             Log.Logger = new Serilog.LoggerConfiguration()
-                                    .ReadFrom.Configuration(builder.Configuration)
+                                    .ReadFrom
+                                    .Configuration(builder.Configuration)
                                     .CreateLogger();
+
+            builder.Host.UseSerilog();
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
                 .AddNegotiate();

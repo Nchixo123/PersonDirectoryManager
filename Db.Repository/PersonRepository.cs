@@ -7,6 +7,6 @@ internal sealed class PersonRepository : RepositoryBase<Person>, IPersonReposito
 {
     internal PersonRepository(PersonDbContext context) : base(context)
     {
-
+        
     }
 }
