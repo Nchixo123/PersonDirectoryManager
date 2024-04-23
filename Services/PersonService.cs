@@ -27,7 +27,7 @@ public sealed class PersonService : IPersonService
         _unitOfWork.SaveChanges();
     }
 
-    public async Task<IQueryable<Person>> GetPeople()
+    public async Task<IEnumerable<Person>> GetPeople()
     {
         var people = await _unitOfWork.PersonRepository.SetAsync();
         return people;
