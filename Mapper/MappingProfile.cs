@@ -4,9 +4,9 @@ using Models;
 
 namespace Mapper;
 
-public class Mapper : Profile
+public class MappingProfile : Profile
 {
-    public Mapper()
+    public MappingProfile()
     {
         CreateMap<City, CityModel>();
         CreateMap<Person, PersonModel>();

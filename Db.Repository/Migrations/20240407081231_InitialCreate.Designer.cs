@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Db.Repository.Migrations
 {
     [DbContext(typeof(PersonDbContext))]
-    [Migration("20240406081006_InitialCreate")]
+    [Migration("20240407081231_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -103,9 +103,8 @@ namespace Db.Repository.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(18)");
 
-                    b.Property<byte[]>("Picture")
-                        .IsRequired()
-                        .HasColumnType("Varbinary(max)");
+                    b.Property<string>("Picture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

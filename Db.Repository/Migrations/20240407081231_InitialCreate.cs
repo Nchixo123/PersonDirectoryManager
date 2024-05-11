@@ -42,7 +42,7 @@ namespace Db.Repository.Migrations
                     OfficeNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     HomeNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     CreateDate = table.Column<DateTime>(type: "Date", nullable: false),
-                    Picture = table.Column<byte[]>(type: "Varbinary(max)", nullable: false),
+                    Picture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDelete = table.Column<int>(type: "int", nullable: false),
                     CityId = table.Column<int>(type: "int", nullable: false)
                 },
