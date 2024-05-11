@@ -100,8 +100,9 @@ namespace Db.Repository.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(18)");
 
-                    b.Property<string>("Picture")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Picture")
+                        .IsRequired()
+                        .HasColumnType("Varbinary(max)");
 
                     b.HasKey("Id");
 

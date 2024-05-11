@@ -1,10 +1,7 @@
-using ExpectionHandler;
 using Microsoft.AspNetCore.Authentication.Negotiate;
-using Microsoft.AspNetCore.Localization;
 using PersonDirectoryManager.Configuration;
 using Serilog;
-using System.Globalization;
-using Mapper;
+using ExpectionHandler;
 
 namespace PersonDirectoryManager
 {
@@ -28,23 +25,6 @@ namespace PersonDirectoryManager
                                     .CreateLogger();
 
             builder.Host.UseSerilog();
-
-
-            builder.Services.Configure<RequestLocalizationOptions>(options =>
-            {
-                var supportedCultures = new[]
-                {
-                    new CultureInfo("en-US"),
-                    new CultureInfo("ka-GE"),
-                };
-
-                options.DefaultRequestCulture = new RequestCulture("en-US");
-                options.SupportedCultures = supportedCultures;
-                options.SupportedUICultures = supportedCultures;
-                options.ApplyCurrentCultureToResponseHeaders = true;
-            });
-
-            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
                 .AddNegotiate();

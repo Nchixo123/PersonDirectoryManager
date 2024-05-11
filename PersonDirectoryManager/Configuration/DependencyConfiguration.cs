@@ -16,6 +16,7 @@ namespace PersonDirectoryManager.Configuration
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<ICityService, CityService>();
+            builder.Services.AddScoped<IPersonRelationService, PersonRelationsService>();
             builder.Services.AddScoped<IPersonService,  PersonService>();
             builder.Services.AddDbContext<PersonDbContext>(options => options.UseSqlServer(connectionString));
         }

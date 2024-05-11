@@ -41,8 +41,8 @@ public class Person
     [Column(TypeName = "Date")]
     public DateTime CreateDate { get; set; } = DateTime.Now;
 
-    [Column(TypeName = "nvarchar(max)")]
-    public string? Picture { get; set; }
+    [Required, Column(TypeName = "Varbinary(max)")]
+    public byte[] Picture { get; set; } = null!;
 
     [Column(TypeName = "int")]
     public bool IsDelete { get; set; }
