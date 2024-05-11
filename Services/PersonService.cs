@@ -27,7 +27,7 @@ public sealed class PersonService : IPersonService
         _unitOfWork.SaveChanges();
     }
 
-    public async Task<IQueryable<Person>> GetPeople()
+    public async Task<IEnumerable<Person>> GetPeople()
     {
         var people = await _unitOfWork.PersonRepository.SetAsync();
         return people;
@@ -43,24 +43,5 @@ public sealed class PersonService : IPersonService
         if (person == null) throw new ArgumentNullException(nameof(person));
         _unitOfWork.PersonRepository.Update(person);
         _unitOfWork.SaveChanges();
-    }
-
-    public List<PersonRelations> GetAllRelationships(int id)
-    {
-        Person person = _unitOfWork.PersonRepository.Get(id) ?? throw new Exception($"No person found with Id {id}");
-
-        var allRelationships = new List<PersonRelations>();
-
-        if (person.FromRelationships != null)
-        {
-            allRelationships.AddRange(person.FromRelationships);
-        }
-
-        if (person.ToRelationships != null)
-        {
-            allRelationships.AddRange(person.ToRelationships);
-        }
-
-        return allRelationships;
     }
 }
